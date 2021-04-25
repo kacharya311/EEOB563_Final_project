@@ -1,0 +1,61 @@
+
+RAxML-NG v. 1.0.2 released on 22.02.2021 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Xeon(R) CPU E5-2650 0 @ 2.00GHz, 16 cores, 125 GB RAM
+
+RAxML-NG was called at 23-Apr-2021 21:30:29 as follows:
+
+raxml-ng --all --msa S_sequences_final_alignment.fa --model GTR+G --prefix T10 --seed 2 --threads 10 --bs-metric fbp,tbe --outgroup SARS_coronavirus
+
+Analysis options:
+  run mode: ML tree search + bootstrapping (Felsenstein Bootstrap + Transfer Bootstrap)
+  start tree(s): random (10) + parsimony (10)
+  bootstrap replicates: max: 1000 + bootstopping (autoMRE, cutoff: 0.030000)
+  outgroup taxa: SARS_coronavirus
+  random seed: 2
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX
+  parallelization: coarse-grained (auto), PTHREADS (10 threads), thread pinning: OFF
+
+[00:00:00] Reading alignment from file: S_sequences_final_alignment.fa
+[00:00:00] Loaded alignment with 27 taxa and 3925 sites
+
+WARNING: Sequences hCoV-19_Brazil1 and hCoV-19_Brazil2 are exactly identical!
+WARNING: Sequences hCoV-19_Egypt1 and hCoV-19_Egypt2 are exactly identical!
+WARNING: Duplicate sequences found: 2
+
+NOTE: Reduced alignment (with duplicates and gap-only sites/taxa removed) 
+NOTE: was saved to: /home/kacharya/EEOB563_Final_project/EEOB563_Final_project/T10.raxml.reduced.phy
+
+Alignment comprises 1 partitions and 225 patterns
+
+Partition 0: noname
+Model: GTR+FO+G4m
+Alignment sites / patterns: 3925 / 225
+Gaps: 3.52 %
+Invariant sites: 74.90 %
+
+
+NOTE: Binary MSA file already exists: T10.raxml.rba
+
+Parallelization scheme autoconfig: 10 worker(s) x 1 thread(s)
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Generating 10 random starting tree(s) with 27 taxa
+[00:00:00] Generating 10 parsimony starting tree(s) with 27 taxa
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 225 / 3600
+[00:00:00] Data distribution: max. searches per worker: 102
+
+ERROR: CPU core oversubscription detected! RAxML-NG will terminate now to avoid wasting resources.
+NOTE:  Details: https://github.com/amkozlov/raxml-ng/wiki/Parallelization#core-oversubscription
+NOTE:  You can use '--force perf_threads' to disable this check, but ONLY if you are 200% sure this is a false alarm!
+
